@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universitas Diponegoro - Login & Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Halaman Login */
+        .login-page {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: url('images/background-undip.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .login-container {
+            width: 350px;
+            padding: 20px;
+            background: rgba(255, 182, 193, 0.9);
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .login-container img {
+            width: 100px;
+            margin-bottom: 10px;
+        }
+
+        .horse-img {
+            width: 150px;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ff69b4;
+            font-size: 16px;
+        }
+
+        .btn {
+            background: #ff1493;
+            color: white;
+            padding: 10px;
+            border: none;
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background: #c71585;
+        }
+
+        /* Halaman Home */
+        .home-page {
+            display: none;
+		height: 100vh;
+		background: url('images/background-undip.jpg') no-repeat center center;
+		background-size: cover; /* Gambar tidak akan terpotong */
+		background-color: #ffffff; /* Warna putih jika ada area kosong */
+        }
+
+        .header {
+            background: rgba(255, 182, 193, 0.9);
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .header img {
+            width: 150px;
+            vertical-align: middle;
+        }
+
+        .header h1 {
+            display: inline;
+            font-size: 24px;
+            margin-left: 10px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .profile img {
+            width: 80px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+
+        .profile-info {
+            font-size: 16px;
+        }
+
+        .panel {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(230, 230, 250, 0.9);
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Halaman Login -->
+    <div class="login-page" id="loginPage">
+        <div class="login-container">
+            <img src="images/logo-undip.png" alt="Logo Universitas Diponegoro">
+            <h2>Login SSO Universitas Diponegoro</h2>
+            <img src="images/horse.png" alt="Kuda Lucu" class="horse-img">
+            <form onsubmit="return loginUser()">
+                <input type="text" placeholder="NIM/NIP/Email" required>
+                <input type="password" placeholder="Password" required>
+                <button class="btn">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Halaman Home -->
+    <div class="home-page" id="homePage">
+        <div class="header">
+            <img src="images/logo-undip.png" alt="Logo Universitas Diponegoro">
+            <h1>Universitas Diponegoro</h1>
+        </div>
+
+        <div class="container">
+            <div class="profile">
+                <img src="images/profile.png" alt="Foto Profil">
+                <div class="profile-info">
+                    <strong>Jessica Novia Hartanto</strong> <br>
+                    NIM: 1203012310095 <br>
+                    <a href="mailto:jessicahartanto@students.undip.ac.id">jessicahartanto@students.undip.ac.id</a>
+                </div>
+            </div>
+
+            <div class="panel">
+                <h3>🔹 Informasi Kampus</h3>
+                <p>Selamat datang di SSO Universitas Diponegoro! Silakan gunakan layanan ini untuk mengakses sistem akademik, WiFi kampus, dan informasi lainnya.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function loginUser() {
+            // Menyembunyikan halaman login dan menampilkan halaman home
+            document.getElementById("loginPage").style.display = "none";
+            document.getElementById("homePage").style.display = "block";
+            return false;
+        }
+    </script>
+
+</body>
+</html>
